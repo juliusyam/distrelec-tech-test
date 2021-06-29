@@ -25,8 +25,3 @@ export enum Width {
   SmallTablet = 992,
   LargeTablet = 1200,
 }
-
-export enum DashboardDisplayHeight {
-  SmallTablet = '100vh - 4em',
-  Desktop = '100vh',
-}
