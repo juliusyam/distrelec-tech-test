@@ -18,7 +18,9 @@ export function RelatedProducts() {
   const [lastItem, setLastItem] =  useState<number>();
 
   useEffect(() => {
+    //If width changes, reset the firstItem in display to be 0, then check lastItem based on width.
     setFirstItem(0);
+    setPageCount(1);
 
     if (width < Width.Phone) {
       setProductDisplayQuantity(1);
@@ -59,21 +61,23 @@ export function RelatedProducts() {
             .map(data =>
               <Product data={ data } showMore={ showMore } key={ data.code } />) }
           <IconButton className="control left" aria-label="left-icon" icon={ <ChevronLeftIcon w={7} h={7} /> }
-            onClick={ () => {
-              if (productDisplayQuantity && lastItem) {
-                setFirstItem(firstItem - productDisplayQuantity);
-                setLastItem(lastItem - productDisplayQuantity);
-                setPageCount(pageCount - 1);
-              }
-            } } />
+                      disabled={ firstItem <= 0 }
+                      onClick={ () => {
+                        if (productDisplayQuantity && lastItem) {
+                          setFirstItem(firstItem - productDisplayQuantity);
+                          setLastItem(lastItem - productDisplayQuantity);
+                          setPageCount(pageCount - 1);
+                        }
+                      } } />
           <IconButton className="control right" aria-label="right-icon" icon={ <ChevronRightIcon w={7} h={7} /> }
-            onClick={ () => {
-              if (productDisplayQuantity && lastItem) {
-                setFirstItem(firstItem + productDisplayQuantity);
-                setLastItem(lastItem + productDisplayQuantity);
-                setPageCount(pageCount + 1);
-              }
-            } } />
+                      disabled={ pageAmount ? pageCount >= pageAmount : undefined }
+                      onClick={ () => {
+                        if (productDisplayQuantity && lastItem) {
+                          setFirstItem(firstItem + productDisplayQuantity);
+                          setLastItem(lastItem + productDisplayQuantity);
+                          setPageCount(pageCount + 1);
+                        }
+                      } } />
         </section> :
         <section className="products-list collapsed-product-list">
           { carouselData

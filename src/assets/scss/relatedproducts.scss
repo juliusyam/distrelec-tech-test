@@ -39,6 +39,10 @@ section.related-products {
       border-radius: 50%;
       transform: translateY(-50%);
 
+      &:focus {
+        box-shadow: 0 0 0 3px $red-100;
+      }
+
       &.left {
         top: 50%;
         left: 0;
