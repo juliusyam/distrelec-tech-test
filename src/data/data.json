@@ -11,7 +11,7 @@
       "energyEfficiencyData": "",
       "productImageAltText": "Image not found",
       "productImageUrl": "https://www.distrelec.biz/Web/WebShopImages/landscape_medium/ho/to/SO-16W-Photo.jpg",
-      "itemPositionOneBased": "1",
+      "itemPositionOneBased": 1,
       "originalPackSize": "",
       "salesUnit": "1 Pieces",
       "showCarouselItemHead": true,

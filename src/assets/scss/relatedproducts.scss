@@ -1,0 +1,118 @@
+@import "variables";
+
+section.related-products {
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  background: $white;
+  border-radius: 0.5em;
+  padding: 1em;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+
+  div.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 2em;
+    margin: 0.5em 0;
+  }
+
+  section.products-list {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    padding: 3em 0;
+  }
+}
+
+
+section.product {
+  min-width: 20em;
+  max-width: 20em;
+  display: grid;
+  margin: 1em;
+  transition: box-shadow 0.5s linear;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid $grey-100;
+
+  &:hover {
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+
+    div.cube {
+      background: $green-800;
+      transform: scale(60);
+      transition: all 0.5s linear;
+
+      &.cube-1 {
+        top: 20px;
+        left: 20px;
+      }
+
+      &.cube-2 {
+        bottom: 20px;
+        right: 20px;
+      }
+    }
+  }
+
+  div.cube {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    z-index: 5;
+
+    &.cube-1 {
+      top: 0;
+      left: 0;
+    }
+
+    &.cube-2 {
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  div.details {
+    z-index: 10;
+    background: $white;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  h3 {
+    margin: 0 0 1em 0;
+    font-weight: 400;
+    font-size: 1em;
+    letter-spacing: 1.2px;
+  }
+
+  div.img-container {
+    padding: 3em 0;
+    background: $white;
+    img {
+      width: 100%;
+      max-height: 20em;
+      object-fit: contain;
+    }
+  }
+
+  div.description {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    h3.price span {
+      color: $grey;
+      font-size: 0.7em;
+    }
+  }
+
+
+}
