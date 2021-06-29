@@ -2,6 +2,9 @@
   "name": "distrelec-tech-test",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "14.15.0"
+  },
   "dependencies": {
     "@chakra-ui/icons": "^1.0.13",
     "@chakra-ui/react": "^1.6.4",
