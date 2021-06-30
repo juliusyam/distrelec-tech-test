@@ -50,11 +50,14 @@ section.display-component {
   display: grid;
   place-items: center;
   padding: 5em;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   background: $blue-grey-100;
 
   @media( max-width: $smallTablet) {
     padding: 3em;
-    height: auto;
+  }
+  @media( max-width: $phone) {
+    padding: 0.5em;
   }
 }
