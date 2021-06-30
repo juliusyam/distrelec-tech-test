@@ -8,6 +8,7 @@ section.related-products {
   width: 100%;
   max-width: 100%;
   overflow: hidden;
+  min-height: 650px;
 
   div.top-bar {
     display: flex;
@@ -117,10 +118,12 @@ section.product {
   div.details {
     z-index: 10;
     background: $white;
+    animation: flasher 0.5s;
     padding: 1em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    color: $black;
   }
 
   h3 {
@@ -133,6 +136,8 @@ section.product {
   div.img-container {
     padding: 3em 0;
     background: $white;
+    opacity: 1;
+    animation: reveal 3s;
     img {
       width: 100%;
       max-height: 20em;
@@ -190,4 +195,23 @@ section.collapsed-product {
     height: 100%;
     place-items: center;
   }
+}
+
+@keyframes flasher {
+  from {
+    color: $black;
+  }
+  to {
+    color: $grey;
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+
 }
