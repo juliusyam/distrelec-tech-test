@@ -105,7 +105,7 @@ function Product({ data, showMore }: ProductProps) {
   const url = data.url;
 
   return (
-    <section className={ showMore ? "product flasher" : "product flasher collapsed-product"}
+    <section className={ showMore ? "product" : "product collapsed-product"}
              onClick={ () => window.open(url, '_blank') }>
         <div className="cube cube-1" />
         <div className="cube cube-2" />
