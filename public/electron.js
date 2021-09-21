@@ -18,7 +18,7 @@ function createWindow() {
     isDev
       ? "http://localhost:3000"
       : `file://${path.join(__dirname, "../build/index.html")}`
-  );
+  ).catch(err => console.log(err));
 
   // Open the DevTools.
   if (isDev) {
