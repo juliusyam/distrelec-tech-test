@@ -2,12 +2,12 @@ import React from 'react';
 import { RelatedProducts } from "./components/RelatedProducts";
 import './assets/scss/App.scss';
 import { ChakraProvider } from "@chakra-ui/react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import {HashRouter, Route, Switch} from "react-router-dom";
 
 function App() {
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <section className="display-component">
         <ChakraProvider>
           <Switch>
@@ -15,7 +15,7 @@ function App() {
           </Switch>
         </ChakraProvider>
       </section>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
